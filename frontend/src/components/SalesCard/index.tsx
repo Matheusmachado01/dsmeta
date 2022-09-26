@@ -1,4 +1,4 @@
-import NotificationButton from '../notificationButton';
+import NotificationButton from '../NotificationButton';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import './styles.css';
@@ -39,7 +39,7 @@ function SalesCard() {
                         className="dsmeta-form-control"
                         dateFormat="dd/MM/yyyy"
                     />
-                </div>
+                </div>       
                 <div className="dsmeta-form-control-container">
                     <DatePicker
                         selected={maxDate}
