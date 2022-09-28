@@ -7,16 +7,16 @@ import { toast } from 'react-toastify';
 type Props = {
     saleId: number;
 }
-function handClick (id :number){
+function handleClick (id :number){
     axios(`${BASE_URL}/sales/${id}/notification`)
     .then(response => {
         toast.info("SMS enviado com sucesso");
-    })
+    });
 }
 
 function NotificationButton( {saleId} : Props) {
     return (
-        <div className="dsmeta-red-btn" onClick={() => handClick(saleId)}>
+        <div className="dsmeta-red-btn" onClick={() => handleClick(saleId)}>
             <img src={icon} alt="Notificar" />
         </div>
     )

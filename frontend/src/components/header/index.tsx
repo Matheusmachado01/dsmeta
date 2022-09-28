@@ -6,11 +6,11 @@ function Header() {
     return (
         <header>
             <div className="dsmeta-logo-container">
-                <img src={logo} alt="DSMeta" />
-                <h1>DSMeta</h1>
+                <img src={logo} alt="Spring React Project" />
+                <h1>Spring React Project</h1>
                 <p>
                     Desenvolvido por
-                    <a href="https://www.instagram.com/devsuperior.ig">@devsuperior.ig</a>
+                    <a href="https://www.instagram.com/matheus_machado91/">@matheus_machado91</a>
                 </p>
             </div>
         </header>
