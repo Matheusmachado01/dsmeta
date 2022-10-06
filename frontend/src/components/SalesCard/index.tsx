@@ -1,11 +1,11 @@
-import NotificationButton from '../NotificationButton';
+import axios from "axios";
+import { useEffect, useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import './styles.css';
-import { useEffect, useState } from "react";
-import axios from "axios";
-import { BASE_URL } from "../../utils/request";
 import { Sale } from "../../models/sale";
+import { BASE_URL } from "../../utils/request";
+import NotificatioButton from '../NotificationButton';
+import './styles.css';
 
 function SalesCard() {
 
@@ -25,10 +25,10 @@ function SalesCard() {
         axios.get(`${BASE_URL}/sales?minDate=${dmin}&maxDate=${dmax}`)
             .then(response => {
                 setSales(response.data.content);
-          });
+            });
     }, [minDate, maxDate])
-    return (
 
+    return (
         <div className="dsmeta-card">
             <h2 className="dsmeta-sales-title">Vendas</h2>
             <div>
@@ -39,7 +39,7 @@ function SalesCard() {
                         className="dsmeta-form-control"
                         dateFormat="dd/MM/yyyy"
                     />
-                </div>       
+                </div>
                 <div className="dsmeta-form-control-container">
                     <DatePicker
                         selected={maxDate}
@@ -75,7 +75,7 @@ function SalesCard() {
                                     <td>R$ {sale.amount.toFixed(2)}</td>
                                     <td>
                                         <div className="dsmeta-red-btn-container">
-                                            <NotificationButton saleId={sale.id} />
+                                            <NotificatioButton saleId={sale.id} />
                                         </div>
                                     </td>
                                 </tr>
@@ -87,7 +87,6 @@ function SalesCard() {
             </div>
 
         </div>
-
     )
 }
 
